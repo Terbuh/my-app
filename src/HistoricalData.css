@@ -1,0 +1,118 @@
+.historical-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .historical-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .historical-container .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .form {
+    margin-bottom: 20px;
+  }
+  
+  .form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .average {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .historical-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .historical-table th,
+  .historical-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .historical-table th {
+    background-color: #007bff;
+    color: white;
+  }.currency-list {
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+  }
+  
+  .currency-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .currency-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .currency-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .historical-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .historical-table th,
+  .historical-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .historical-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  

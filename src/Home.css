@@ -1,0 +1,92 @@
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .home-container h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .home-container p {
+    font-size: 18px;
+    color: #666;
+  }
+  .wallet-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .wallet-button:hover {
+    background-color: #0056b3;
+  }
+  .home-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .home-button:hover {
+    background-color: #0056b3;
+  }
+  .currency-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .currency-table th,
+  .currency-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .currency-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .currency-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .currency-table tr:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .home-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .home-button:hover {
+    background-color: #0056b3;
+  }
+  
