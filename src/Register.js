@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth, db } from './firebase'; // Import Firestore
+import { doc, setDoc } from 'firebase/firestore'; // Funkcje Firestore
 import './Register.css';
 
 function Register({ navigateToLogin }) {
@@ -11,10 +12,18 @@ function Register({ navigateToLogin }) {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            // Rejestracja użytkownika
-            await createUserWithEmailAndPassword(auth, email, password);
+            // Rejestracja użytkownika w Firebase Authentication
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
+            // Tworzenie dokumentu użytkownika w Firestore
+            await setDoc(doc(db, 'users', user.uid), {
+                email: user.email,
+                wallet: {}, // Pusty portfel na start
+            });
+
             alert('Rejestracja zakończona sukcesem. Możesz się zalogować!');
-            navigateToLogin(); // Przejście do ekranu logowania
+            navigateToLogin();
         } catch (err) {
             setError(err.message);
         }
@@ -41,7 +50,9 @@ function Register({ navigateToLogin }) {
                 />
                 <button type="submit">Zarejestruj się</button>
             </form>
-            <button onClick={navigateToLogin}>Wróć do logowania</button>
+            <button type="button" onClick={navigateToLogin}>
+                Wróć do logowania
+            </button>
         </div>
     );
 }
