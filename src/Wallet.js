@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { db } from './firebase'; // Import Firestore
+import { db } from './firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import './Wallet.css';
 import axios from 'axios';
@@ -46,7 +46,7 @@ function Wallet() {
     useEffect(() => {
         const fetchCurrencyRates = async () => {
             try {
-                const response = await axios.get('http://api.nbp.pl/api/exchangerates/tables/A/');
+                const response = await axios.get('https://api.nbp.pl/api/exchangerates/tables/A/');
                 const rates = response.data[0].rates.reduce((acc, rate) => {
                     acc[rate.code] = rate.mid; // Mapujemy kod waluty na kurs
                     return acc;

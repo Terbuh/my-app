@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { db } from './firebase'; // Import Firestore
+import { db } from './firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import axios from 'axios';
-import './Withdraw.css'; // Stylizacja komponentu
+import './Withdraw.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { auth } from './firebase';
 
@@ -21,7 +21,7 @@ function Withdraw() {
     useEffect(() => {
         const fetchCurrencies = async () => {
             try {
-                const response = await axios.get('http://api.nbp.pl/api/exchangerates/tables/A/');
+                const response = await axios.get('https://api.nbp.pl/api/exchangerates/tables/A/');
                 const rates = response.data[0].rates;
                 setCurrencies(rates.map((rate) => ({ code: rate.code, rate: rate.mid }))); // Pobieramy kod i kurs waluty
             } catch (err) {

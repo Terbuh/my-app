@@ -10,11 +10,11 @@ function HistoricalData() {
     const [error, setError] = useState('');
     const [showCurrencyList, setShowCurrencyList] = useState(false);
 
-    // Pobierz listę walut
+
     useEffect(() => {
         const fetchCurrencies = async () => {
             try {
-                const response = await axios.get('http://api.nbp.pl/api/exchangerates/tables/A/');
+                const response = await axios.get('https://api.nbp.pl/api/exchangerates/tables/A/');
                 setCurrencies(response.data[0].rates.map((rate) => rate.code));
             } catch (err) {
                 console.error('Błąd podczas pobierania walut:', err);
@@ -33,12 +33,12 @@ function HistoricalData() {
 
         setError('');
         try {
-            const years = Array.from({ length: 10 }, (_, i) => 2024 - i); // Ostatnie 10 lat
+            const years = Array.from({ length: 10 }, (_, i) => 2024 - i);
             const yearlyData = [];
 
             for (const year of years) {
                 const response = await axios.get(
-                    `http://api.nbp.pl/api/exchangerates/rates/A/${currency}/${year}-01-01/${year}-12-31/`
+                    `https://api.nbp.pl/api/exchangerates/rates/A/${currency}/${year}-01-01/${year}-12-31/`
                 );
                 const rates = response.data.rates;
                 const yearlyAverage =
@@ -62,13 +62,13 @@ function HistoricalData() {
 
         setError('');
         try {
-            const years = Array.from({ length: 20 }, (_, i) => 2024 - i); // Ostatnie 20 lat
+            const years = Array.from({ length: 20 }, (_, i) => 2024 - i);
             let allRates = [];
 
             for (const year of years) {
                 try {
                     const response = await axios.get(
-                        `http://api.nbp.pl/api/exchangerates/rates/A/${currency}/${year}-01-01/${year}-12-31/`
+                        `https://api.nbp.pl/api/exchangerates/rates/A/${currency}/${year}-01-01/${year}-12-31/`
                     );
                     allRates = allRates.concat(response.data.rates.map((rate) => rate.mid));
                 } catch (err) {
@@ -87,7 +87,7 @@ function HistoricalData() {
 
     const handleSelectCurrency = (selectedCurrency) => {
         setCurrency(selectedCurrency);
-        setShowCurrencyList(false); // Zamknij listę walut po wyborze
+        setShowCurrencyList(false);
     };
 
     return (

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { auth } from './firebase';
 import axios from 'axios';
 import './Home.css';
-import HistoricalData from './HistoricalData';
 
 function Home() {
     const [user, setUser] = useState(auth.currentUser);
@@ -15,7 +14,7 @@ function Home() {
     useEffect(() => {
         const fetchCurrencies = async () => {
             try {
-                const response = await axios.get('http://api.nbp.pl/api/exchangerates/tables/A/');
+                const response = await axios.get('https://api.nbp.pl/api/exchangerates/tables/A/');
                 const rates = response.data[0].rates;
                 const popularCurrencies = rates
                     .filter((rate) => ['USD', 'EUR', 'GBP', 'CHF', 'JPY', 'CAD', 'AUD', 'NOK', 'SEK', 'DKK'].includes(rate.code))

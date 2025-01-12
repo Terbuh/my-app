@@ -21,7 +21,7 @@ function Deposit() {
     useEffect(() => {
         const fetchCurrencies = async () => {
             try {
-                const response = await axios.get('http://api.nbp.pl/api/exchangerates/tables/A/');
+                const response = await axios.get('https://api.nbp.pl/api/exchangerates/tables/A/');
                 const rates = response.data[0].rates;
                 setCurrencies(rates.map((rate) => ({ code: rate.code, rate: rate.mid }))); // Pobieramy kod i kurs waluty
             } catch (err) {

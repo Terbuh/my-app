@@ -1,17 +1,13 @@
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import Home from './Home';
-import Transactions from './Transactions';
-import { auth } from './firebase';
 import Wallet from './Wallet';
 import Withdraw from './Withdraw';
 import Deposit from './Deposit';
 import HistoricalData from './HistoricalData';
 
 function App() {
-  const navigate = useNavigate();
-  const user = auth.currentUser;
 
   return (
     <Routes>

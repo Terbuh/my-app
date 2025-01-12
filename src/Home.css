@@ -1,92 +1,79 @@
-.wrapper{
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
+  background-color: #f8f9fa; 
 }
 
 .home-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .home-container h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .home-container p {
-    font-size: 18px;
-    color: #666;
-  }
-  .wallet-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .wallet-button:hover {
-    background-color: #0056b3;
-  }
-  .home-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .home-button:hover {
-    background-color: #0056b3;
-  }
-  .currency-table {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    border-collapse: collapse;
-  }
-  
-  .currency-table th,
-  .currency-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .currency-table th {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .currency-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .currency-table tr:hover {
-    background-color: #e0f7fa;
-  }
-  
-  .home-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .home-button:hover {
-    background-color: #0056b3;
-  }
-  
+  text-align: center;
+  padding: 30px;
+  border: 1px solid #d1d5db; 
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.home-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #2b3a42; 
+  font-weight: bold;
+}
+
+.home-container p {
+  font-size: 18px;
+  color: #495867;
+  margin-bottom: 20px;
+}
+
+.wallet-button,
+.home-button {
+  margin: 15px 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: white;
+  background-color: #2b3a42;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.wallet-button:hover,
+.home-button:hover {
+  background-color: #1a252f; 
+}
+
+.currency-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.currency-table th,
+.currency-table td {
+  border: 1px solid #d1d5db;
+  padding: 12px;
+  text-align: center;
+}
+
+.currency-table th {
+  background-color: #495867;
+  color: white;
+  font-weight: bold;
+}
+
+.currency-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.currency-table tr:hover {
+  background-color: #e9ecef; 
+}
