@@ -1,6 +1,6 @@
 # Kantor
 
-Aplikacja desktopowa służąca do obsługi wymiany walut, zbudowana w React i Electron jako PWA. Projekt pozwala na przeglądanie kursów walut, dokonywanie wpłat, wypłat oraz wymianę walut.
+Aplikacja desktopowa służąca do obsługi wymiany walut, zbudowana w React jako PWA. Projekt pozwala na przeglądanie kursów walut, dokonywanie wpłat, wypłat oraz wymianę walut.
 
 ---
 
