@@ -42,16 +42,15 @@ function Wallet() {
         fetchWallet();
     }, [user]);
 
-    // Pobierz kursy walut z API NBP
     useEffect(() => {
         const fetchCurrencyRates = async () => {
             try {
                 const response = await axios.get('https://api.nbp.pl/api/exchangerates/tables/A/');
                 const rates = response.data[0].rates.reduce((acc, rate) => {
-                    acc[rate.code] = rate.mid; // Mapujemy kod waluty na kurs
+                    acc[rate.code] = rate.mid;
                     return acc;
                 }, {});
-                rates['PLN'] = 1; // Dodaj kurs dla PLN (1:1)
+                rates['PLN'] = 1;
                 setCurrencyRates(rates);
             } catch (err) {
                 console.error('Błąd podczas pobierania kursów walut:', err);

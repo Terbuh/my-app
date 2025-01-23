@@ -26,14 +26,12 @@ Aplikacja została wdrożona na Firebase Hosting i jest dostępna pod adresem:
 
 ### **Dla użytkowników końcowych**
 
-1. Pobierz instalator `.exe` z sekcji (https://github.com/Terbuh/my-app.git).
-2. Uruchom instalator i zainstaluj aplikację na swoim komputerze.
-3. Po zainstalowaniu otwórz aplikację z menu Start lub pulpitu.
+1. https://kantor-9243d.web.app
+2. Dodaj aplikacje i ją zainstaluj
 
 ### **Dla programistów**
 
 1. Sklonuj repozytorium:
    git clone https://github.com/Terbuh/my-app.git
    cd my-app
-
-https://kantor-9243d.web.app
+   npm start
