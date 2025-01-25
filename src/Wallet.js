@@ -70,6 +70,29 @@ function Wallet() {
         );
     }
 
+    const handleShare = () => {
+        if (!navigator.share) {
+            alert('Twoje urządzenie nie obsługuje funkcji udostępniania.');
+            return;
+        }
+
+        // Generuj dane portfela do udostępnienia
+        const walletData = Object.entries(wallet)
+            .map(([currency, amount]) => `${currency}: ${amount.toFixed(2)}`)
+            .join('\n');
+
+        const message = `Stan mojego portfela walut:\n\n${walletData}`;
+
+        navigator
+            .share({
+                title: 'Stan mojego portfela',
+                text: message,
+            })
+            .then(() => console.log('Udostępniono pomyślnie!'))
+            .catch((error) => console.error('Błąd podczas udostępniania:', error));
+    };
+
+
     return (
         <div className="wallet-container">
             <h1>Twój Portfel</h1>
@@ -95,6 +118,9 @@ function Wallet() {
             ) : (
                 <p>Brak danych w portfelu.</p>
             )}
+            <button onClick={handleShare} className="share-button">
+                Udostępnij portfel
+            </button>
             <button onClick={() => navigate('/home')} className="back-button">
                 Wróć
             </button>
